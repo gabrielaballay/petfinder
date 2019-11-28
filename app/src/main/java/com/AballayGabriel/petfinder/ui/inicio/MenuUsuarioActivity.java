@@ -1,7 +1,8 @@
-package com.AballayGabriel.petfinder;
+package com.AballayGabriel.petfinder.ui.inicio;
 
 import android.os.Bundle;
 
+import com.AballayGabriel.petfinder.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

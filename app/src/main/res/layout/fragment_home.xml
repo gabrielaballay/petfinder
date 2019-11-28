@@ -131,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/etMail"
+        android:id="@+id/etClave"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -150,7 +150,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="24dp"
         android:text="Email"
-        app:layout_constraintEnd_toStartOf="@+id/etMail"
+        app:layout_constraintEnd_toStartOf="@+id/etClave"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -165,7 +165,7 @@
         android:inputType="textPassword"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMail" />
+        app:layout_constraintTop_toBottomOf="@+id/etClave" />
 
     <TextView
         android:id="@+id/textView12"

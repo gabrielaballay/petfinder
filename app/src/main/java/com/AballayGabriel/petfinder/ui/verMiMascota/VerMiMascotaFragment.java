@@ -1,4 +1,4 @@
-package com.AballayGabriel.petfinder.ui.share;
+package com.AballayGabriel.petfinder.ui.verMiMascota;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.AballayGabriel.petfinder.R;
 
-public class ShareFragment extends Fragment {
+public class VerMiMascotaFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private VerMiMascotaViewModel sendViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        sendViewModel =
+                ViewModelProviders.of(this).get(VerMiMascotaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_ver_mi_mascota, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        sendViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

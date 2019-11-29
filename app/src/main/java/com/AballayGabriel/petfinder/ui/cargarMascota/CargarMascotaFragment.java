@@ -1,4 +1,4 @@
-package com.AballayGabriel.petfinder.ui.send;
+package com.AballayGabriel.petfinder.ui.cargarMascota;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,22 +14,22 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.AballayGabriel.petfinder.R;
 
-public class SendFragment extends Fragment {
+public class CargarMascotaFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private CargarMascotaViewModel shareViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        shareViewModel =
+                ViewModelProviders.of(this).get(CargarMascotaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_cargar_mascota, container, false);
+        //final TextView textView = root.findViewById(R.id.text_share);
+        /*shareViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                //textView.setText(s);
             }
-        });
+        });*/
         return root;
     }
 }

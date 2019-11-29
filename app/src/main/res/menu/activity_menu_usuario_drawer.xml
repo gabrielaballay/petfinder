@@ -5,33 +5,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="Perfil" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_mascotas_perdidas"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="Mascotas Perdidas" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_mascotas_encontradas"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="Mascotas Encontradas" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_encontre_mascota"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:title="Encontre una Mascotas!" />
+        <item
+            android:id="@+id/nav_cargar_mascota"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Cargar Mascota" />
+        <item
+            android:id="@+id/nav_ver_mi_mascota"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Ver mis Mascotas" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_salir"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="Salir" />
         </menu>
     </item>
 

@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresar(android.view.View view){
-        //Log.d("salida",name.getText().toString()+" "+pass.getText().toString());
-        //mainViewModel.ingresar(name.getText().toString(),pass.getText().toString());
-        Intent i=new Intent(getApplicationContext(),MenuUsuarioActivity.class);
-        startActivity(i);
+        Log.d("salida",name.getText().toString()+" "+pass.getText().toString());
+        mainViewModel.ingresar(name.getText().toString(),pass.getText().toString());
+        //Intent i=new Intent(getApplicationContext(),MenuUsuarioActivity.class);
+        //startActivity(i);
     }
 }

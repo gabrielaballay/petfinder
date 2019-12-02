@@ -47,7 +47,6 @@ public class PerfilViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 Usuario usuario=response.body();
-                Log.d("salida","Llega - "+response.body().getApellido());
                 usuarioMutableLiveData.postValue(usuario);
             }
 

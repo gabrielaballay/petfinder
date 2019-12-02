@@ -70,7 +70,7 @@ public class PerfilFragment extends Fragment {
                 }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        fijarDatos(usuarioVisto);
+                        fijarDatos(null);
                     }
                 }).show();
             }
@@ -104,6 +104,7 @@ public class PerfilFragment extends Fragment {
         usuarioVisto.setEstado(1);
         usuarioVisto.setProvinciaId(Integer.parseInt(provincia.getText().toString()));
         perfilViewModel.actualizar(usuarioVisto);
+        fijarDatos(usuarioVisto);
     }
 
     public void fijarDatos(Usuario sesion){

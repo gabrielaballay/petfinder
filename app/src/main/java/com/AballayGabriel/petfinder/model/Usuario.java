@@ -1,126 +1,126 @@
 package com.AballayGabriel.petfinder.model;
 
 public class Usuario {
-    private int UsuarioId;
-    private String Apellido;
-    private String Nombre;
-    private String Ciudad;
-    private String Direccion;
-    private String Telefono;
-    private String Email;
-    private String Clave;
-    private int Estado;
-    private int ProvinciaId;
+    private int usuarioId;
+    private String apellido;
+    private String nombre;
+    private String ciudad;
+    private String direccion;
+    private String telefono;
+    private String email;
+    private String clave;
+    private int estado;
+    private int provinciaId;
 
     public Usuario() {
     }
 
     public Usuario(int usuarioId, String apellido, String nombre, String ciudad, String direccion, String telefono, String email, String clave, int estado, int provinciaId) {
-        UsuarioId = usuarioId;
-        Apellido = apellido;
-        Nombre = nombre;
-        Ciudad = ciudad;
-        Direccion = direccion;
-        Telefono = telefono;
-        Email = email;
-        Clave = clave;
-        Estado = estado;
-        ProvinciaId = provinciaId;
+        this.usuarioId = usuarioId;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.clave = clave;
+        this.estado = estado;
+        this.provinciaId = provinciaId;
     }
 
     public int getUsuarioId() {
-        return UsuarioId;
+        return usuarioId;
     }
 
     public void setUsuarioId(int usuarioId) {
-        UsuarioId = usuarioId;
+        this.usuarioId = usuarioId;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getCiudad() {
-        return Ciudad;
+        return ciudad;
     }
 
     public void setCiudad(String ciudad) {
-        Ciudad = ciudad;
+        this.ciudad = ciudad;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
     public void setTelefono(String telefono) {
-        Telefono = telefono;
+        this.telefono = telefono;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getClave() {
-        return Clave;
+        return clave;
     }
 
     public void setClave(String clave) {
-        Clave = clave;
+        this.clave = clave;
     }
 
     public int getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(int estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 
     public int getProvinciaId() {
-        return ProvinciaId;
+        return provinciaId;
     }
 
     public void setProvinciaId(int provinciaId) {
-        ProvinciaId = provinciaId;
+        this.provinciaId = provinciaId;
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
-                "UsuarioId=" + UsuarioId +
-                ", Apellido='" + Apellido + '\'' +
-                ", Nombre='" + Nombre + '\'' +
-                ", Ciudad='" + Ciudad + '\'' +
-                ", Direccion='" + Direccion + '\'' +
-                ", Telefono='" + Telefono + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Clave='" + Clave + '\'' +
-                ", Estado=" + Estado +
-                ", ProvinciaId=" + ProvinciaId +
+                "usuarioId=" + usuarioId +
+                ", apellido='" + apellido + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", clave='" + clave + '\'' +
+                ", estado=" + estado +
+                ", provinciaId=" + provinciaId +
                 '}';
     }
 }

@@ -49,7 +49,7 @@ public class ApiClient {
 
         @FormUrlEncoded
         @PUT("usuarios/{id}")
-        Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int groupId, @Field("Apellido") String apellido, @Field("Nombre")String nombre,@Field("Ciudad") String ciudad, @Field("Direccion")String direccion,
+        Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int usuarioId, @Field("Apellido") String apellido, @Field("Nombre")String nombre,@Field("Ciudad") String ciudad, @Field("Direccion")String direccion,
                                  @Field("Telefono") String telefono,@Field("Email") String email, @Field("Clave") String clave,@Field("Estado") int estado, @Field("ProvinciaId")int provinciaId);
 
         // @GET("test")

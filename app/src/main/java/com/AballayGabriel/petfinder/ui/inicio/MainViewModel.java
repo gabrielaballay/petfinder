@@ -44,13 +44,11 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void ingresar(String usuario,String clave){
-        Log.d("salida", "View Model"+usuario+" "+clave);
         Call<String> dato= ApiClient.getMyApiClient().login(usuario,clave);
-
         dato.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-
+                Log.d("salida", "View Model en el response ");
                 if(response.isSuccessful()) {
 
                     token.postValue(response.body());

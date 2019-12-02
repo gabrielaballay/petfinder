@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private String token;
     private MainViewModel mainViewModel;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         name=findViewById(R.id.etUser);
         pass=findViewById(R.id.etClave);
         //error=findViewById(R.id.error);
-        /*mainViewModel= ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel= ViewModelProviders.of(this).get(MainViewModel.class);
         /*mainViewModel.getError().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer s) {
@@ -36,13 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 error.setVisibility(s);
             }
         });*/
-        /*mainViewModel.getToken().observe(this, new Observer<String>() {
+        mainViewModel.getToken().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
+                Log.d("salida","Lega"+name.getText().toString()+" "+pass.getText().toString());
                 Intent i=new Intent(getApplicationContext(),MenuUsuarioActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
 
     }
 

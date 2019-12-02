@@ -1,4 +1,4 @@
-package com.AballayGabriel.petfinder.ui.tools;
+package com.AballayGabriel.petfinder.ui.mascotasEncontradas;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.AballayGabriel.petfinder.R;
 
-public class ToolsFragment extends Fragment {
+public class MascotasEncontradasFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private MascotasEncontradasViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        slideshowViewModel =
+                ViewModelProviders.of(this).get(MascotasEncontradasViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_mascotas_encontradas, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        slideshowViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

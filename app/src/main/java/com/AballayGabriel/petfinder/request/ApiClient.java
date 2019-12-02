@@ -20,7 +20,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class ApiClient {
-    private static final String PATH="http://192.168.0.28:45455/api/";
+    private static final String PATH="https://10.76.165.159:45455/api/";
     private static  MyApiInterface myApiInteface;
     private static String accessToken=null;
 
@@ -38,6 +38,7 @@ public class ApiClient {
                 .build();
         Log.d("salida",retrofit.baseUrl().toString());
         myApiInteface=retrofit.create(MyApiInterface.class);
+        Log.d("salida",myApiInteface.toString());
         return myApiInteface;
     }
 
@@ -47,16 +48,16 @@ public class ApiClient {
 
     public interface MyApiInterface {
 
-        @POST("propietario/login")
-        Call<String> login(@Query("Usuario")String usuario, @Query("Clave") String clave);
+        @POST("usuarios/login")
+        Call<String> login(@Query("Email")String usuario, @Query("Clave") String clave);
 
 
 
-        @GET("propietario")
+        @GET("usuarios")
         Call<Usuario> leer(@Header("Authorization")String token);
 
         @FormUrlEncoded
-        @PUT("propietario/{id}")
+        @PUT("usuarios/{id}")
         Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int groupId, @Field("Nombre")String nombre, @Field("Apellido") String apellido, @Field("Dni") int dni, @Field("Correo")String correo, @Field("Clave")String clave, @Field("EstadoPropietario") int estado, @Field("Telefono")long telefono);
         // @GET("test")
         // Call<Data> leer();

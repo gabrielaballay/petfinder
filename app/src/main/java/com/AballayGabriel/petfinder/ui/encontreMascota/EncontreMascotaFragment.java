@@ -1,4 +1,4 @@
-package com.AballayGabriel.petfinder.ui.gallery;
+package com.AballayGabriel.petfinder.ui.encontreMascota;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,19 +14,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.AballayGabriel.petfinder.R;
 
-public class GalleryFragment extends Fragment {
+public class EncontreMascotaFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private EncontreMascotaViewModel toolsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        toolsViewModel =
+                ViewModelProviders.of(this).get(EncontreMascotaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_encontre_mascota, container, false);
+        final TextView textView = root.findViewById(R.id.text_tools);
+        toolsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                //textView.setText(s);
+                textView.setText(s);
             }
         });
         return root;

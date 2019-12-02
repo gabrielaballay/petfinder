@@ -1,16 +1,16 @@
-package com.AballayGabriel.petfinder.ui.slideshow;
+package com.AballayGabriel.petfinder.ui.verMiMascota;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class VerMiMascotaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public VerMiMascotaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is send fragment");
     }
 
     public LiveData<String> getText() {

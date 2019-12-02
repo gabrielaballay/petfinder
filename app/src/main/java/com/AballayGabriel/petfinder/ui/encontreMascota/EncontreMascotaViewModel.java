@@ -1,16 +1,16 @@
-package com.AballayGabriel.petfinder.ui.share;
+package com.AballayGabriel.petfinder.ui.encontreMascota;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class EncontreMascotaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public EncontreMascotaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("This is tools fragment");
     }
 
     public LiveData<String> getText() {

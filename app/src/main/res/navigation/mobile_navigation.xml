@@ -3,41 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_perfil">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.AballayGabriel.petfinder.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_perfil"
+        android:name="com.AballayGabriel.petfinder.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.AballayGabriel.petfinder.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_mascotas_perdidas"
+        android:name="com.AballayGabriel.petfinder.ui.mascotasPerdidas.MascotasPerdidasFragment"
+        android:label="Mascotas Perdidas"
+        tools:layout="@layout/fragment_mascotas_perdidas" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.AballayGabriel.petfinder.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_mascotas_encontradas"
+        android:name="com.AballayGabriel.petfinder.ui.mascotasEncontradas.MascotasEncontradasFragment"
+        android:label="Mascotas Encontradas"
+        tools:layout="@layout/fragment_mascotas_encontradas" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.AballayGabriel.petfinder.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_encontre_mascota"
+        android:name="com.AballayGabriel.petfinder.ui.encontreMascota.EncontreMascotaFragment"
+        android:label="Encontre una Mascota!"
+        tools:layout="@layout/fragment_encontre_mascota" />
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.AballayGabriel.petfinder.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:id="@+id/nav_cargar_mascota"
+        android:name="com.AballayGabriel.petfinder.ui.cargarMascota.CargarMascotaFragment"
+        android:label="Cargar Mascota"
+        tools:layout="@layout/fragment_cargar_mascota" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.AballayGabriel.petfinder.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:id="@+id/nav_ver_mi_mascota"
+        android:name="com.AballayGabriel.petfinder.ui.verMiMascota.VerMiMascotaFragment"
+        android:label="Ver mis Mascotas"
+        tools:layout="@layout/fragment_ver_mi_mascota" />
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.AballayGabriel.petfinder.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
 </navigation>

@@ -58,14 +58,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/etDni"
+        android:id="@+id/etCiudad"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:enabled="false"
-        android:hint="DNI"
+        android:hint="Ciudad"
         android:inputType="textPersonName"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,11 +77,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="24dp"
-        android:text="DNI"
-        app:layout_constraintEnd_toStartOf="@+id/etDni"
-        app:layout_constraintHorizontal_bias="0.095"
+        android:text="Ciudad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="24dp"
+        android:text="Direccion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/etDireccion"
@@ -95,33 +103,7 @@
         android:inputType="textPersonName"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDni" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="24dp"
-        android:text="Direccion"
-        app:layout_constraintEnd_toStartOf="@+id/etDireccion"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <EditText
-        android:id="@+id/etTelefono"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="Telefono"
-        android:inputType="textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDireccion" />
+        app:layout_constraintTop_toBottomOf="@+id/etCiudad" />
 
     <TextView
         android:id="@+id/textView10"
@@ -130,24 +112,22 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="24dp"
         android:text="Telefono"
-        app:layout_constraintEnd_toStartOf="@+id/etTelefono"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/etClave"
+        android:id="@+id/edTelefono"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:enabled="false"
-        android:hint="correo@mail.com"
-        android:inputType="textEmailAddress"
+        android:hint="telefono"
+        android:inputType="textPersonName"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono" />
+        app:layout_constraintTop_toBottomOf="@+id/etDireccion" />
 
     <TextView
         android:id="@+id/textView11"
@@ -156,10 +136,32 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="24dp"
         android:text="Email"
-        app:layout_constraintEnd_toStartOf="@+id/etClave"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <EditText
+        android:id="@+id/etMail"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="ej.: juan@mail.com"
+        android:inputType="textEmailAddress"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTelefono" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="22dp"
+        android:text="Contraseña"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/etPass"
@@ -169,44 +171,19 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:enabled="false"
+        android:hint="password"
         android:inputType="textPassword"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etClave" />
+        app:layout_constraintTop_toBottomOf="@+id/etMail" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="22dp"
-        android:text="Contraseña"
-        app:layout_constraintEnd_toStartOf="@+id/etPass"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <EditText
-        android:id="@+id/etPassNuevo"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPass" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="20dp"
-        android:text="Contraseña nueva"
-        app:layout_constraintEnd_toStartOf="@+id/etPassNuevo"
-        app:layout_constraintHorizontal_bias="0.303"
+        android:text="Provincia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -218,58 +195,33 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:enabled="false"
-        android:hint="Provincia"
+        android:hint="provincia"
         android:inputType="textPersonName"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassNuevo" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="24dp"
-        android:text="Provincia"
-        app:layout_constraintEnd_toStartOf="@+id/etProvincia"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <EditText
-        android:id="@+id/etCiudad"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="Ciudad"
-        android:inputType="textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etProvincia" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="22dp"
-        android:text="Ciudad"
-        app:layout_constraintEnd_toStartOf="@+id/etCiudad"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
     <Button
-        android:id="@+id/btnGuardarEditar"
+        android:id="@+id/btnEditar"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="104dp"
         android:text="Editar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCiudad" />
+        app:layout_constraintTop_toBottomOf="@+id/etProvincia" />
+    <Button
+        android:id="@+id/btnGuardar"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Guardar"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etProvincia" />
 </androidx.constraintlayout.widget.ConstraintLayout>

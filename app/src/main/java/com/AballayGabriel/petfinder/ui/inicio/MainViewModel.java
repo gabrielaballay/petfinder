@@ -48,7 +48,7 @@ public class MainViewModel extends AndroidViewModel {
         dato.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("salida", "View Model en el response ");
+
                 if(response.isSuccessful()) {
 
                     token.postValue(response.body());

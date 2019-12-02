@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel.getToken().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Log.d("salida","Lega"+name.getText().toString()+" "+pass.getText().toString());
                 Intent i=new Intent(getApplicationContext(),MenuUsuarioActivity.class);
                 startActivity(i);
             }

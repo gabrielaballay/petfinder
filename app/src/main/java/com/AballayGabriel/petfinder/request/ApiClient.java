@@ -20,6 +20,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class ApiClient {
+    //private static final String PATH="http://10.70.155.9:45455/api/";
     private static final String PATH="http://192.168.43.222:45455/api/";
     private static  MyApiInterface myApiInteface;
     private static String accessToken=null;
@@ -44,11 +45,12 @@ public class ApiClient {
         Call<String> login(@Query("Email")String usuario, @Query("Clave") String clave);
 
         @GET("usuarios")
-        Call<Usuario> leer(@Header("Authorization")String token);
+        Call<Usuario> leerUsuario(@Header("Authorization")String token);
 
         @FormUrlEncoded
         @PUT("usuarios/{id}")
-        Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int groupId, @Field("Nombre")String nombre, @Field("Apellido") String apellido, @Field("Dni") int dni, @Field("Correo")String correo, @Field("Clave")String clave, @Field("EstadoPropietario") int estado, @Field("Telefono")long telefono);
+        Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int groupId, @Field("Apellido") String apellido, @Field("Nombre")String nombre,@Field("Ciudad") String ciudad, @Field("Direccion")String direccion,
+                                 @Field("Telefono") String telefono,@Field("Email") String email, @Field("Clave") String clave,@Field("Estado") int estado, @Field("ProvinciaId")int provinciaId);
 
         // @GET("test")
         // Call<Data> leer();

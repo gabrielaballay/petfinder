@@ -1,5 +1,8 @@
 package com.AballayGabriel.petfinder.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Usuario {
     private int usuarioId;
     private String apellido;
@@ -8,8 +11,14 @@ public class Usuario {
     private String direccion;
     private String telefono;
     private String email;
+    @SerializedName("clave")
+    @Expose
     private String clave;
+    @SerializedName("estado")
+    @Expose
     private int estado;
+    @SerializedName("provinciaId")
+    @Expose
     private int provinciaId;
 
     public Usuario() {

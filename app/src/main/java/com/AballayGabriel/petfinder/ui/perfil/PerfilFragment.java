@@ -70,7 +70,7 @@ public class PerfilFragment extends Fragment {
                 }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        fijarDatos(null);
+                        fijarDatos(usuarioVisto);
                     }
                 }).show();
             }

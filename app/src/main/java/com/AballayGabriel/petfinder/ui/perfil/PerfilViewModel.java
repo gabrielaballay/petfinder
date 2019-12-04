@@ -38,9 +38,7 @@ public class PerfilViewModel extends AndroidViewModel {
     public void leer(){
 
         SharedPreferences sp=context.getSharedPreferences("token",0);
-
         String accessToken=sp.getString("token","");
-
         Call<Usuario> usuarioCall= ApiClient.getMyApiClient().leerUsuario(accessToken);
 
         usuarioCall.enqueue(new Callback<Usuario>() {
@@ -66,9 +64,8 @@ public class PerfilViewModel extends AndroidViewModel {
         proActualizado.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                Log.d("salida","por actualizar");
                 if(response.isSuccessful()) {
-                    Toast.makeText(getApplication(), "Propietario Actualizado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "Datos Actualizados", Toast.LENGTH_LONG).show();
                 }
             }
 

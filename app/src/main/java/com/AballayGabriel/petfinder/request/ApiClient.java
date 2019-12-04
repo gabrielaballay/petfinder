@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -21,7 +22,7 @@ import retrofit2.http.Query;
 
 public class ApiClient {
     //private static final String PATH="http://10.70.155.9:45455/api/";
-    private static final String PATH="http://192.168.43.222:45455/api/";
+    private static final String PATH="http://192.168.43.216:45455/api/";
     private static  MyApiInterface myApiInteface;
     private static String accessToken=null;
 
@@ -34,7 +35,6 @@ public class ApiClient {
                 .client(client.build())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-        Log.d("salida",retrofit.baseUrl().toString());
         myApiInteface=retrofit.create(MyApiInterface.class);
         return myApiInteface;
     }
@@ -49,8 +49,19 @@ public class ApiClient {
 
         @FormUrlEncoded
         @PUT("usuarios/{id}")
-        Call<Usuario> actualizar(@Header("Authorization")String token, @Path("id") int usuarioId, @Field("Apellido") String apellido, @Field("Nombre")String nombre,@Field("Ciudad") String ciudad, @Field("Direccion")String direccion,
-                                 @Field("Telefono") String telefono,@Field("Email") String email, @Field("Clave") String clave,@Field("Estado") int estado, @Field("ProvinciaId")int provinciaId);
+        Call<Usuario> actualizar(
+                @Header("Authorization")String token,
+                @Path("id") int usuarioId,
+                @Field("Apellido") String apellido,
+                @Field("Nombre")String nombre,
+                @Field("Ciudad") String ciudad,
+                @Field("Direccion")String direccion,
+                @Field("Telefono") String telefono,
+                @Field("Email") String email,
+                @Field("Clave") String clave,
+                @Field("Estado") int estado,
+                @Field("ProvinciaId")int provinciaId);
+
 
         // @GET("test")
         // Call<Data> leer();

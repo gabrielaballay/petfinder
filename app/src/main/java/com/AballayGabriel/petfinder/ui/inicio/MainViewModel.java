@@ -71,7 +71,7 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 //error.postValue(0);
-                Log.d("salida",t.getMessage());
+                //Log.d("salida",t.getMessage());
             }
         });
     }

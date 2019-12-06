@@ -22,13 +22,13 @@ import java.util.List;
 
 public class ListaMascotasFragment extends ArrayAdapter<Mascota> {
     private Context context;
-    private List<Mascota> listaMascotas;
+    private List<Mascota> listarMascotas;
     private LayoutInflater li;
 
     public ListaMascotasFragment(@NonNull Context context, int resource, @NonNull List<Mascota> objects, LayoutInflater li){
         super(context,resource,objects);
         this.context=context;
-        this.listaMascotas=objects;
+        this.listarMascotas=objects;
         this.li=li;
     }
 
@@ -40,20 +40,20 @@ public class ListaMascotasFragment extends ArrayAdapter<Mascota> {
         if(itemView==null){
             itemView=li.inflate(R.layout.fragment_lista_mascotas,parent,false);
         }
-        Mascota mascota=listaMascotas.get(position);
+        Mascota mascota=listarMascotas.get(position);
 
         if(!mascota.getImagen().isEmpty()) {
             byte[] byteCode = Base64.decode(mascota.getImagen(), Base64.DEFAULT);
             imagenMostar = BitmapFactory.decodeByteArray(byteCode, 0, byteCode.length);
         }
         mascota.setImagenMostar(imagenMostar);
-        ImageView foto=itemView.findViewById(R.id.ivFotoMiMascota);
+        ImageView foto=itemView.findViewById(R.id.ivFotoMascota);
         foto.setImageBitmap(imagenMostar);
-        TextView nombre=itemView.findViewById((R.id.tvMiNombre));
+        TextView nombre=itemView.findViewById((R.id.tvNombre));
         nombre.setText(mascota.getNombreMascota());
-        TextView lugar=itemView.findViewById(R.id.tvMiLugar);
+        TextView lugar=itemView.findViewById(R.id.tvLugar);
         lugar.setText(mascota.getLugar());
-        TextView descripcion=itemView.findViewById(R.id.tvMiDescripcion);
+        TextView descripcion=itemView.findViewById(R.id.tvDescripcion);
         descripcion.setText(mascota.getDescripcion());
         return itemView;
     }

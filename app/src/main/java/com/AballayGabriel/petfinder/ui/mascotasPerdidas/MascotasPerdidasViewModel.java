@@ -26,34 +26,33 @@ import retrofit2.Response;
 
 public class MascotasPerdidasViewModel extends AndroidViewModel {
     private Context context;
-    private MutableLiveData<List<Mascota>> mascotaMutableLD;
+    private MutableLiveData<List<Mascota>> mascotasLista;
 
     public MascotasPerdidasViewModel(@NonNull Application application) {
         super(application);
         context=application.getApplicationContext();
     }
 
-    public LiveData<List<Mascota>> getMascotaMutable(){
-        if(mascotaMutableLD==null){
-            mascotaMutableLD=new MutableLiveData<>();
+    public LiveData<List<Mascota>> getMascotasData(){
+        if(mascotasLista==null){
+            mascotasLista=new MutableLiveData<>();
         }
-        return mascotaMutableLD;
+        return mascotasLista;
     }
 
-    public void listarMascota(){
-
-        Call<List<Mascota>> listaDatos= ApiClient.getMyApiClient().mascotasList(token());
-        listaDatos.enqueue(new Callback<List<Mascota>>() {
+    public void listaMascotasPerdidas(){
+        Call<List<Mascota>> datosMascotas=ApiClient.getMyApiClient().mascotasPerdidasGet(token(),-1);
+        datosMascotas.enqueue(new Callback<List<Mascota>>() {
             @Override
             public void onResponse(Call<List<Mascota>> call, Response<List<Mascota>> response) {
-                Log.d("Salida","Response "+response.code());
+                Log.d("Salida",response.message());
                 if(response.isSuccessful()){
-                     ArrayList<Mascota> mascotas=new ArrayList<>();
-                     for (Mascota m: response.body()) {
+                    ArrayList<Mascota> mascotas=new ArrayList<>();
+                    for (Mascota m: response.body()) {
 
-                         mascotas.add(m);
+                        mascotas.add(m);
                     }
-                    mascotaMutableLD.postValue(mascotas);
+                    mascotasLista.postValue(mascotas);
                 }
             }
 
@@ -63,6 +62,7 @@ public class MascotasPerdidasViewModel extends AndroidViewModel {
             }
         });
     }
+
 
     private String token(){
         SharedPreferences sp=context.getSharedPreferences("token",0);

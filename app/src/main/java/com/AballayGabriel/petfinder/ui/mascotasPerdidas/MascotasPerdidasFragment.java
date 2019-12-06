@@ -26,24 +26,23 @@ public class MascotasPerdidasFragment extends Fragment {
     private MascotasPerdidasViewModel mascotasPerdidasViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
+        mascotasPerdidasViewModel=ViewModelProviders.of(this).get(MascotasPerdidasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mascotas_perdidas, container, false);
 
         generarView(root);
-        Log.d("salida mascotas","despues de generar");
-        mascotasPerdidasViewModel.listarMascota();
-
+        mascotasPerdidasViewModel.listaMascotasPerdidas();
         return root;
     }
 
     public void generarView(final View view){
         mascotasPerdidasViewModel=ViewModelProviders.of(this).get(MascotasPerdidasViewModel.class);
-        mascotasPerdidasViewModel.getMascotaMutable().observe(this, new Observer<List<Mascota>>() {
+        mascotasPerdidasViewModel.getMascotasData().observe(this, new Observer<List<Mascota>>() {
             @Override
             public void onChanged(List<Mascota> mascotas) {
-                Log.d("salida mascotas","en el onchange");
                 ArrayAdapter<Mascota> adapter=new ListaMascotasFragment(getContext(),R.layout.fragment_lista_mascotas,mascotas,getLayoutInflater());
                 ListView lv=view.findViewById(R.id.milista);
                 lv.setAdapter(adapter);
+                Log.d("salida mascotas","en el onchange");
             }
         });
     }

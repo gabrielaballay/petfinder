@@ -20,8 +20,6 @@ import com.AballayGabriel.petfinder.model.Mascota;
 
 import java.util.List;
 
-
-
 public class MisMascotasFragment extends ArrayAdapter<Mascota> {
     private Context context;
     private List<Mascota> listaMascotas;
@@ -38,9 +36,9 @@ public class MisMascotasFragment extends ArrayAdapter<Mascota> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Bitmap imagenMostar=null;
-        View itemView=convertView;
-        if(itemView==null){
-            itemView=li.inflate(R.layout.fragment_mis_mascotas,parent,false);
+        View vista=convertView;
+        if(vista==null){
+            vista=li.inflate(R.layout.fragment_mis_mascotas,parent,false);
         }
         Mascota mascota=listaMascotas.get(position);
 
@@ -49,14 +47,14 @@ public class MisMascotasFragment extends ArrayAdapter<Mascota> {
             imagenMostar = BitmapFactory.decodeByteArray(byteCode, 0, byteCode.length);
         }
         mascota.setImagenMostar(imagenMostar);
-        ImageView foto=itemView.findViewById(R.id.ivFotoMiMascota);
+        ImageView foto=vista.findViewById(R.id.ivFotoMiMascota);
         foto.setImageBitmap(imagenMostar);
-        TextView nombre=itemView.findViewById((R.id.tvMiNombre));
+        TextView nombre=vista.findViewById((R.id.tvMiNombre));
         nombre.setText(mascota.getNombreMascota());
-        TextView lugar=itemView.findViewById(R.id.tvMiLugar);
+        TextView lugar=vista.findViewById(R.id.tvMiLugar);
         lugar.setText(mascota.getLugar());
-        TextView descripcion=itemView.findViewById(R.id.tvMiDescripcion);
+        TextView descripcion=vista.findViewById(R.id.tvMiDescripcion);
         descripcion.setText(mascota.getDescripcion());
-        return itemView;
+        return vista;
     }
 }

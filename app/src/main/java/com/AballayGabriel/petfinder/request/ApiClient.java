@@ -102,18 +102,13 @@ public class ApiClient {
         );
 
 
-        @GET("mascotas")
-        Call<List<Mascota>> mascotasPerdidasGet(@Header("Authorization")String token);
-
         @GET("mascotas/{id}")
-        Call<List<Mascota>> misMascotasList(
-                @Header("Authorization")String token,
-                @Path("id") int id
-        );
+        Call<List<Mascota>> mascotasPerdidasGet(@Header("Authorization")String token,
+                                                @Path("id") int id);
 
-        @GET("mascotas")
-        Call<List<Mascota>> mascotasList(@Header("Authorization")String token
-        );
+        @GET("mascotas/mascotasPerdidasList")
+        Call<List<Mascota>> misMascotasList(@Header("Authorization")String token);
+
 
         //@GET("mascotas/encontradas")
         //Call<List<Mascota>> listaEncontradas(@Header("Authorization")String token

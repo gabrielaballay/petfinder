@@ -41,8 +41,8 @@ public class VerMiMascotaViewModel extends AndroidViewModel {
 
     public void listaMiMascotas(){
         int id=Integer.parseInt(idRecuperado());
-        Log.d("Salida",idRecuperado()+" sera esto");
-        Call<List<Mascota>> datosMascotas=ApiClient.getMyApiClient().misMascotasList(token(),id);
+
+        Call<List<Mascota>> datosMascotas=ApiClient.getMyApiClient().mascotasPerdidasGet(token(),id);
         datosMascotas.enqueue(new Callback<List<Mascota>>() {
             @Override
             public void onResponse(Call<List<Mascota>> call, Response<List<Mascota>> response) {

@@ -112,6 +112,8 @@ public class ApiClient {
         Call<List<Mascota>> mascotasPerdidasGet(@Header("Authorization")String token,
                                                 @Path("id") int id);
 
+        @GET("encontradas")
+        Call<List<Encontrada>> mascotasEncontradasGet(@Header("Authorization")String token);
     }
 
 }

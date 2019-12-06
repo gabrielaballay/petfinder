@@ -31,6 +31,8 @@ public class MascotasEncontradasFragment extends Fragment {
         mascotasEncontradasViewModel=ViewModelProviders.of(this).get(MascotasEncontradasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mascotas_perdidas, container, false);
 
+
+
         generarView(root);
         mascotasEncontradasViewModel.listaMascotasEncontradas();
         return root;

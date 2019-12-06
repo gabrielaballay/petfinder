@@ -7,12 +7,6 @@ import androidx.lifecycle.ViewModel;
 public class SalirViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public SalirViewModel() {
-        //mText = new MutableLiveData<>();
-        //mText.setValue("This is send fragment");
-    }
+    public SalirViewModel() {}
 
-    /*public LiveData<String> getText() {
-        return mText;
-    }*/
 }

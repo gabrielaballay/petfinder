@@ -1,12 +1,9 @@
 package com.AballayGabriel.petfinder.model;
 
-import android.graphics.Bitmap;
-
 public class Encontrada {
     private int encontradaId;
     private String foto;
     private String imagen;
-    private Bitmap imagenSubir;
     private String descripcion;
     private String fecha;
     private String lugar;
@@ -15,11 +12,10 @@ public class Encontrada {
     public Encontrada() {
     }
 
-    public Encontrada(int encontradaId, String foto, String imagen, Bitmap imagenSubir, String descripcion, String fecha, String lugar, int usuarioId) {
+    public Encontrada(int encontradaId, String foto, String imagen, String descripcion, String fecha, String lugar, int usuarioId) {
         this.encontradaId = encontradaId;
         this.foto = foto;
         this.imagen = imagen;
-        this.imagenSubir = imagenSubir;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.lugar = lugar;
@@ -48,14 +44,6 @@ public class Encontrada {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
-    }
-
-    public Bitmap getImagenSubir() {
-        return imagenSubir;
-    }
-
-    public void setImagenSubir(Bitmap imagenSubir) {
-        this.imagenSubir = imagenSubir;
     }
 
     public String getDescripcion() {
@@ -96,7 +84,6 @@ public class Encontrada {
                 "encontradaId=" + encontradaId +
                 ", foto='" + foto + '\'' +
                 ", imagen='" + imagen + '\'' +
-                ", imagenSubir=" + imagenSubir +
                 ", descripcion='" + descripcion + '\'' +
                 ", fecha='" + fecha + '\'' +
                 ", lugar='" + lugar + '\'' +

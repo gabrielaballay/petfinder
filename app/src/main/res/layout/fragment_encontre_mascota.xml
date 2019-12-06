@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imCargaFoto"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="141dp"
@@ -27,7 +27,7 @@
         android:text="Tomar Foto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imCargaFoto" />
 
     <TextView
         android:id="@+id/textView13"
@@ -41,7 +41,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btnTomarFoto" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etLugarAllasgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="140dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTomarFoto" />
+
+    <EditText
+        android:id="@+id/etDescAllasgo"
         android:layout_width="260dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -64,18 +76,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-    <EditText
-        android:id="@+id/etLugarAllasgo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="140dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTomarFoto" />
-
     <Button
         android:id="@+id/btnPonerFecha"
         style="@android:style/Widget.Button.Inset"
@@ -89,23 +89,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/vttFechaEncuentro"
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/btnPonerFecha"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/etDescAllasgo" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnSubir"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:enabled="false"
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/vttFechaEncuentro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

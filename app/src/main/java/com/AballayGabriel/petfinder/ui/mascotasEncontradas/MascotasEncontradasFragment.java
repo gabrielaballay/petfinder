@@ -23,13 +23,7 @@ public class MascotasEncontradasFragment extends Fragment {
         slideshowViewModel =
                 ViewModelProviders.of(this).get(MascotasEncontradasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mascotas_encontradas, container, false);
-       // final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-         //       textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

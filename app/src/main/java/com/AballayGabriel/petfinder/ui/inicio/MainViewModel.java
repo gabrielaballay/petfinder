@@ -17,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainViewModel extends AndroidViewModel {
-    //private MutableLiveData<Integer> error;
+    private MutableLiveData<Integer> error;
     private MutableLiveData<String> token;
 
     private Context context;
@@ -29,12 +29,12 @@ public class MainViewModel extends AndroidViewModel {
     }
 
 
-    /*public LiveData<Integer> getError(){
+    public LiveData<Integer> getError(){
         if(error==null){
             error=new MutableLiveData<>();
         }
         return error;
-    }*/
+    }
 
     public MutableLiveData<String> getToken(){
         if(token==null){
@@ -59,10 +59,10 @@ public class MainViewModel extends AndroidViewModel {
                     editor.commit();
                     Log.d("salida ultimo token", t);
                     //Gone Visibility
-                    //error.postValue(8);
+                    error.postValue(8);
                 }else{
                     //Visible Visibility
-                    //error.postValue(1);
+                    error.postValue(1);
                 }
 
 
@@ -70,7 +70,7 @@ public class MainViewModel extends AndroidViewModel {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                //error.postValue(0);
+                error.postValue(0);
                 //Log.d("salida",t.getMessage());
             }
         });

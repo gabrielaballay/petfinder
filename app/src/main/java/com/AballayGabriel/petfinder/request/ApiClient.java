@@ -2,6 +2,7 @@ package com.AballayGabriel.petfinder.request;
 
 import android.util.Log;
 
+import com.AballayGabriel.petfinder.model.Encontrada;
 import com.AballayGabriel.petfinder.model.Mascota;
 import com.AballayGabriel.petfinder.model.Recompensa;
 import com.AballayGabriel.petfinder.model.Usuario;
@@ -47,12 +48,21 @@ public class ApiClient {
     public interface MyApiInterface {
 
         @POST("usuarios/login")
-        Call<String> login(@Query("Email")String usuario, @Query("Clave") String clave
-        );
+        Call<String> login(@Query("Email")String usuario, @Query("Clave") String clave);
+
+        @FormUrlEncoded
+        @POST("encontradas")
+        Call<Encontrada> encontradaPost(
+                @Header("Authorization")String token,
+                @Field("Foto") String foto,
+                @Field("Imagen") String imagen,
+                @Field("Descripcion") String descripcion,
+                @Field("Fecha") String fecha,
+                @Field("Lugar") String lugar,
+                @Field("UsuarioId") int usuarioId);
 
         @GET("usuarios")
-        Call<Usuario> leerUsuario(@Header("Authorization")String token
-        );
+        Call<Usuario> leerUsuario(@Header("Authorization")String token);
 
         @FormUrlEncoded
         @PUT("usuarios/{id}")
@@ -67,8 +77,7 @@ public class ApiClient {
                 @Field("Email") String email,
                 @Field("Clave") String clave,
                 @Field("Estado") int estado,
-                @Field("ProvinciaId") int provinciaId
-        );
+                @Field("ProvinciaId") int provinciaId);
 
         @FormUrlEncoded
         @POST("mascotas")
@@ -85,8 +94,7 @@ public class ApiClient {
                 @Field("Fecha") String fecha,
                 @Field("RecompensaId") int recompensaId,
                 @Field("Lugar")String lugar,
-                @Field("UsuarioId") int usuarioId
-        );
+                @Field("UsuarioId") int usuarioId);
 
         @FormUrlEncoded
         @POST("recompensas")
@@ -94,24 +102,17 @@ public class ApiClient {
                 @Header("Authorization")String token,
                 @Field("Monto") double monto,
                 @Field("Tiempo") String tiempo,
-                @Field("Estado") int estado
-        );
+                @Field("Estado") int estado);
 
         @GET("recompensas")
-        Call<Recompensa> recompensaGet(@Header("Authorization")String token
-        );
+        Call<Recompensa> recompensaGet(@Header("Authorization")String token);
 
 
         @GET("mascotas/{id}")
         Call<List<Mascota>> mascotasPerdidasGet(@Header("Authorization")String token,
                                                 @Path("id") int id);
 
-        @GET("mascotas/mascotasPerdidasList")
-        Call<List<Mascota>> misMascotasList(@Header("Authorization")String token);
-
-
-        //@GET("mascotas/encontradas")
-        //Call<List<Mascota>> listaEncontradas(@Header("Authorization")String token
-        //);
     }
+
 }
+

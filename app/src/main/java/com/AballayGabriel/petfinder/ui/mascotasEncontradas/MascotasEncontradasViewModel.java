@@ -1,19 +1,22 @@
 package com.AballayGabriel.petfinder.ui.mascotasEncontradas;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MascotasEncontradasViewModel extends ViewModel {
+import com.AballayGabriel.petfinder.model.Encontrada;
 
-    private MutableLiveData<String> mText;
+public class MascotasEncontradasViewModel extends AndroidViewModel {
 
-    public MascotasEncontradasViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    private MutableLiveData<Encontrada> encontradaMutableLD;
+
+
+    public MascotasEncontradasViewModel(@NonNull Application application) {
+        super(application);
     }
 
-    public LiveData<String> getText() {
-        return mText;
-    }
 }

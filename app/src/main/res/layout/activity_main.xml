@@ -42,22 +42,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:text="Ingrese Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUser" />
-
-    <EditText
-        android:id="@+id/etClave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/etUser"
@@ -71,8 +60,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <EditText
+        android:id="@+id/etClave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
     <Button
         android:id="@+id/btnIngresar"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -83,6 +84,7 @@
 
     <Button
         android:id="@+id/btnRegistrar"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -90,4 +92,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etClave" />
 </androidx.constraintlayout.widget.ConstraintLayout>

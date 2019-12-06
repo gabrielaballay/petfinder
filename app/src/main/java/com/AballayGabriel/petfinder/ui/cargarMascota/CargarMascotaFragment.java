@@ -67,7 +67,7 @@ public class CargarMascotaFragment extends Fragment {
         cargarFecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                colocarFecha(getContext());
+                colocarFecha();
             }
         });
 
@@ -82,10 +82,7 @@ public class CargarMascotaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                guardar();
-               if(mascotaViewModel.getMascotaMutableLiveData().hasActiveObservers()){
-                   Intent i=new Intent(getContext(), MenuUsuarioActivity.class);
-                   startActivity(i);
-               }
+               getActivity().onBackPressed();
             }
         });
         return root;
@@ -106,13 +103,13 @@ public class CargarMascotaFragment extends Fragment {
         descripcion=view.findViewById(R.id.etDescripcion);
     }
 
-    private void colocarFecha(Context context){
+    private void colocarFecha(){
         int dia, mes, anio;
         final Calendar c=Calendar.getInstance();
         dia=c.get(Calendar.DAY_OF_MONTH);
         mes=c.get(Calendar.MONTH);
         anio=c.get(Calendar.YEAR);
-        DatePickerDialog datePickerDialog=new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog=new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 fechaPerdida.setText(day+"/"+(month+1)+"/"+year);

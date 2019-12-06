@@ -11,14 +11,8 @@ public class Usuario {
     private String direccion;
     private String telefono;
     private String email;
-    @SerializedName("clave")
-    @Expose
     private String clave;
-    @SerializedName("estado")
-    @Expose
     private int estado;
-    @SerializedName("provinciaId")
-    @Expose
     private int provinciaId;
 
     public Usuario() {

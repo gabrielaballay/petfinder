@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etTamanio" />
 
     <ImageView
-        android:id="@+id/ivFotoMascota"
+        android:id="@+id/ivFotoMiMascota"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="5dp"
@@ -112,7 +112,7 @@
         android:text="Cargar Imagen"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFotoMascota" />
+        app:layout_constraintTop_toBottomOf="@+id/ivFotoMiMascota" />
 
     <EditText
         android:id="@+id/etDescripcion"
@@ -248,6 +248,7 @@
         android:paddingBottom="2dp"
         android:text="Conatacto..."
         android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
 

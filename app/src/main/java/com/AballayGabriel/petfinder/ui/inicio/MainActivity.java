@@ -15,6 +15,7 @@ import com.AballayGabriel.petfinder.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText name,pass;
+    private Button ingreso;
     //private TextView error;
     private String token;
     private MainViewModel mainViewModel;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         name=findViewById(R.id.etUser);
         pass=findViewById(R.id.etClave);
+        ingreso=findViewById(R.id.btnIngresar);
         //error=findViewById(R.id.error);
         mainViewModel= ViewModelProviders.of(this).get(MainViewModel.class);
         /*mainViewModel.getError().observe(this, new Observer<Integer>() {
@@ -42,12 +44,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ingreso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainViewModel.ingresar(name.getText().toString(),pass.getText().toString());
+            }
+        });
     }
 
     public void ingresar(android.view.View view){
-        Log.d("salida",name.getText().toString()+" "+pass.getText().toString());
-        mainViewModel.ingresar(name.getText().toString(),pass.getText().toString());
-        //Intent i=new Intent(getApplicationContext(),MenuUsuarioActivity.class);
-        //startActivity(i);
+        //Log.d("salida",name.getText().toString()+" "+pass.getText().toString());
+
+
     }
 }

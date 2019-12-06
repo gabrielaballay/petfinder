@@ -1,5 +1,14 @@
 package com.AballayGabriel.petfinder.model;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+import android.util.Log;
+import android.widget.ImageView;
+
+import org.json.JSONException;
+
+import java.io.File;
 import java.time.LocalDate;
 
 public class Mascota {
@@ -10,16 +19,18 @@ public class Mascota {
     private int edad;
     private String descripcion;
     private String foto;
+    private String imagen;
+    private Bitmap imagenMostar;
     private int estado;
-    private LocalDate fecha;
+    private String fecha;
     private int recompensaId;
-    private int localizaId;
+    private String lugar;
     private int usuarioId;
 
     public Mascota() {
     }
 
-    public Mascota(int mascotaId, String nombreMascota, String raza, String tamanio, int edad, String descripcion, String foto, int estado, LocalDate fecha, int recompensaId, int localizaId, int usuarioId) {
+    public Mascota(int mascotaId, String nombreMascota, String raza, String tamanio, int edad, String descripcion, String foto, String imagen, Bitmap imagenMostar, int estado, String fecha, int recompensaId, String lugar, int usuarioId) {
         this.mascotaId = mascotaId;
         this.nombreMascota = nombreMascota;
         this.raza = raza;
@@ -27,10 +38,12 @@ public class Mascota {
         this.edad = edad;
         this.descripcion = descripcion;
         this.foto = foto;
+        this.imagen = imagen;
+        this.imagenMostar = imagenMostar;
         this.estado = estado;
         this.fecha = fecha;
         this.recompensaId = recompensaId;
-        this.localizaId = localizaId;
+        this.lugar = lugar;
         this.usuarioId = usuarioId;
     }
 
@@ -90,6 +103,22 @@ public class Mascota {
         this.foto = foto;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public Bitmap getImagenMostar() {
+        return imagenMostar;
+    }
+
+    public void setImagenMostar(Bitmap imagenMostar) {
+        this.imagenMostar = imagenMostar;
+    }
+
     public int getEstado() {
         return estado;
     }
@@ -98,11 +127,11 @@ public class Mascota {
         this.estado = estado;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -114,12 +143,12 @@ public class Mascota {
         this.recompensaId = recompensaId;
     }
 
-    public int getLocalizaId() {
-        return localizaId;
+    public String getLugar() {
+        return lugar;
     }
 
-    public void setLocalizaId(int localizaId) {
-        this.localizaId = localizaId;
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
     }
 
     public int getUsuarioId() {
@@ -140,10 +169,12 @@ public class Mascota {
                 ", edad=" + edad +
                 ", descripcion='" + descripcion + '\'' +
                 ", foto='" + foto + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", imagenMostar=" + imagenMostar +
                 ", estado=" + estado +
-                ", fecha=" + fecha +
+                ", fecha='" + fecha + '\'' +
                 ", recompensaId=" + recompensaId +
-                ", localizaId=" + localizaId +
+                ", lugar='" + lugar + '\'' +
                 ", usuarioId=" + usuarioId +
                 '}';
     }

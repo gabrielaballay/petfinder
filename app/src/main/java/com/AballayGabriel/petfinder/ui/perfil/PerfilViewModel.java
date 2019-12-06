@@ -46,6 +46,12 @@ public class PerfilViewModel extends AndroidViewModel {
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 Usuario usuario=response.body();
                 usuarioMutableLiveData.postValue(usuario);
+
+                SharedPreferences sp=context.getSharedPreferences("userId",0);
+                SharedPreferences.Editor editor=sp.edit();
+                String t=usuario.getUsuarioId()+"";
+                editor.putString("userId",t);
+                editor.commit();
             }
 
             @Override
@@ -56,22 +62,27 @@ public class PerfilViewModel extends AndroidViewModel {
     }
 
     public void actualizar(Usuario usuario){
+
         SharedPreferences sp=context.getSharedPreferences("token",0);
         String accessToken=sp.getString("token","");
 
-        Call<Usuario> proActualizado=ApiClient.getMyApiClient().actualizar(accessToken,usuario.getUsuarioId(),usuario.getApellido(),usuario.getNombre(),usuario.getCiudad(),
-                usuario.getDireccion(),usuario.getTelefono(),usuario.getEmail(),usuario.getClave(),usuario.getEstado(),usuario.getProvinciaId());
-        proActualizado.enqueue(new Callback<Usuario>() {
+        Call<Usuario> userActualizado=ApiClient.getMyApiClient().actualizar(accessToken,usuario.getUsuarioId(),usuario.getApellido(),usuario.getNombre(),
+                usuario.getCiudad(),usuario.getDireccion(),usuario.getTelefono(),usuario.getEmail(),usuario.getClave(),usuario.getEstado(),
+                usuario.getProvinciaId());
+        userActualizado.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+
                 if(response.isSuccessful()) {
+                    Usuario usuario=response.body();
+                    usuarioMutableLiveData.postValue(usuario);
                     Toast.makeText(getApplication(), "Datos Actualizados", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
-
+                Log.d("salida",t.getMessage()+"");
             }
         });
 

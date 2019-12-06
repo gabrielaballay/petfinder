@@ -44,6 +44,7 @@ public class PerfilFragment extends Fragment {
             public void onChanged(Usuario usuario) {
 
                 usuarioVisto=usuario;
+
                 fijarDatos(usuario);
             }
         });
